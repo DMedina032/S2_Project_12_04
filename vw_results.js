@@ -24,9 +24,22 @@
       
 */
 var reportHTML = "<h1>title</h1>";
+for (i = 0;) {
+    totalVotes = 0;
+    race.foreach(calcSum);
+    reportHTML = "<table><caption>race</caption><tr><th>Candidate<th/><th>Votes</th></tr></table>";
+    candidateRows(i, totalVotes)
+}
 
-
-
+candidateRows(raceNum, totalVotes) {
+    var rowHTML = "<tr><td>name" + canidateName + "(party)</td><td>votes" + canididateParty + "(percent)</td></tr>" + canidatePercent.toFixed(1) + candidateVotes.toLocalString();
+    for (j) {
+        canidateName = canidate[raceNum][j];
+        canididateParty = canidate[raceNum][j];
+        canidateVotes = canidate[raceNum][j];
+        canidatePercent = calcPercent(candidateVotes, totalVotes);
+    }
+}
 
 /* Callback Function to calculate an array sum */
 function calcSum(value) {
